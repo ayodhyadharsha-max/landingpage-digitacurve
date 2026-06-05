@@ -11,6 +11,8 @@ export default function IntentClusters() {
       keywords: ["AEO optimization", "LLMSEO strategy", "generative engine optimization (GEO)", "SEO agency"],
       icon: <Search className="w-6 h-6 text-orange-500" />,
       tagline: "AI & Search Engine Dominance",
+      badge: "AI-Ready",
+      badgeColor: "bg-orange-500/10 text-orange-400 border-orange-500/20",
       bullets: [
         "AEO (Answer Engine Optimization) for voice & smart assistant queries",
         "LLMSEO targeting AI engines like Gemini, ChatGPT, and Claude",
@@ -19,8 +21,8 @@ export default function IntentClusters() {
         "Deep competitor mapping and generative keyword search profiling"
       ],
       ctaText: "Get SEO Growth Strategy",
-      borderColor: "hover:border-orange-500/30",
-      glowColor: "group-hover:shadow-orange-500/5"
+      borderColor: "hover:border-orange-500/40",
+      glowColor: "hover:shadow-[0_0_25px_rgba(249,115,22,0.12)]"
     },
     {
       id: "webdesign",
@@ -28,6 +30,8 @@ export default function IntentClusters() {
       keywords: ["custom web design", "Next.js web developer", "CRO landing pages"],
       icon: <Layers className="w-6 h-6 text-blue-400" />,
       tagline: "Next-Gen Speeds & Interfaces",
+      badge: "100/100 Speed",
+      badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",
       bullets: [
         "Hand-crafted layout designs built completely from scratch",
         "Frameworks like Next.js & Tailwind CSS for load times < 1 second",
@@ -36,8 +40,8 @@ export default function IntentClusters() {
         "Interactive tools, calculation widgets, and secure backend APIs"
       ],
       ctaText: "Request Web Build Quote",
-      borderColor: "hover:border-blue-500/30",
-      glowColor: "group-hover:shadow-blue-500/5"
+      borderColor: "hover:border-blue-500/40",
+      glowColor: "hover:shadow-[0_0_25px_rgba(59,130,246,0.12)]"
     },
     {
       id: "ppc",
@@ -45,6 +49,8 @@ export default function IntentClusters() {
       keywords: ["google ads management", "meta ads agency", "adwords consultant"],
       icon: <Target className="w-6 h-6 text-amber-400" />,
       tagline: "Google Ads & Meta Ads Mastery",
+      badge: "Max ROI",
+      badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
       bullets: [
         "End-to-end setups on Google Search, Display, and Shopping networks",
         "High-performance Meta Ads (Facebook & Instagram) campaigns",
@@ -53,8 +59,8 @@ export default function IntentClusters() {
         "Transparent, live-updating custom conversion reporting dashboards"
       ],
       ctaText: "Claim Paid Ads Audit",
-      borderColor: "hover:border-amber-500/30",
-      glowColor: "group-hover:shadow-amber-500/5"
+      borderColor: "hover:border-amber-500/40",
+      glowColor: "hover:shadow-[0_0_25px_rgba(234,179,8,0.12)]"
     },
     {
       id: "socialmedia",
@@ -62,6 +68,8 @@ export default function IntentClusters() {
       keywords: ["social media optimization", "organic content marketing", "brand presence"],
       icon: <HeartHandshake className="w-6 h-6 text-pink-400" />,
       tagline: "Brand Growth & Engagement",
+      badge: "10x Reach",
+      badgeColor: "bg-pink-500/10 text-pink-400 border-pink-500/20",
       bullets: [
         "End-to-end organic social calendars (Instagram, LinkedIn, Facebook)",
         "High-CTR visual asset design and dynamic copy creation",
@@ -70,23 +78,23 @@ export default function IntentClusters() {
         "Influencer outreach campaigns and multi-channel brand marketing"
       ],
       ctaText: "Get Social Media Plan",
-      borderColor: "hover:border-pink-500/30",
-      glowColor: "group-hover:shadow-pink-500/5"
+      borderColor: "hover:border-pink-500/40",
+      glowColor: "hover:shadow-[0_0_25px_rgba(236,72,153,0.12)]"
     }
   ];
-
+ 
   const scrollToForm = () => {
     const element = document.getElementById("audit-form-section");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+ 
   return (
     <section id="services-section" className="relative py-24 bg-slate-950 bg-grid-pattern border-t border-white/5">
       <div className="absolute top-0 right-1/4 -translate-y-1/2 w-72 h-72 rounded-full bg-blue-500/5 blur-[90px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-72 h-72 rounded-full bg-orange-500/5 blur-[90px] pointer-events-none" />
-
+ 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Block */}
@@ -101,7 +109,7 @@ export default function IntentClusters() {
             We structure our operations explicitly around your custom business goals. Choose the targeted approach that matches your immediate needs.
           </p>
         </div>
-
+ 
         {/* Intent Cluster Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {clusters.map((cluster) => (
@@ -109,7 +117,11 @@ export default function IntentClusters() {
               key={cluster.id}
               className={`group flex flex-col justify-between rounded-2xl glass-panel p-5 sm:p-6 border border-white/5 transition-all duration-300 ${cluster.borderColor} ${cluster.glowColor} hover:translate-y-[-4px] relative overflow-hidden`}
             >
-              
+              {/* Visual Badge */}
+              <span className={`absolute top-4 right-4 px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded border shadow-sm ${cluster.badgeColor}`}>
+                {cluster.badge}
+              </span>
+ 
               {/* Card Core Content */}
               <div>
                 {/* Header Row */}
@@ -117,7 +129,7 @@ export default function IntentClusters() {
                   <div className="w-12 h-12 rounded-xl bg-slate-900 border border-white/5 flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-300">
                     {cluster.icon}
                   </div>
-                  <div>
+                  <div className="pr-16"> {/* Add right padding to prevent overlapping with badge */}
                     <h3 className="text-xl font-bold text-white tracking-tight leading-tight">{cluster.title}</h3>
                     <p className="text-xs text-orange-500/90 font-bold uppercase tracking-wider mt-0.5">{cluster.tagline}</p>
                   </div>

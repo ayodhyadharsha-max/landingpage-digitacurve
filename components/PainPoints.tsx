@@ -53,27 +53,27 @@ export default function PainPoints() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           
           {/* Typical Agency Column */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-rose-950/10 border border-rose-500/10 relative overflow-hidden flex flex-col justify-between">
+          <div className="p-6 sm:p-8 rounded-2xl bg-rose-950/20 border border-rose-900/40 relative overflow-hidden flex flex-col justify-between hover:border-rose-700/40 transition-all duration-300 shadow-[0_0_20px_rgba(244,63,94,0.02)]">
             <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl pointer-events-none" />
             
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center border border-rose-500/20">
+                <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center border border-rose-500/20 shadow-inner">
                   <ShieldAlert className="w-5 h-5 text-rose-500" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white tracking-tight">The "Set-and-Forget" Agency</h3>
-                  <p className="text-[10px] text-rose-500 uppercase tracking-wider font-bold mt-0.5">High Ad Waste & Low Intent</p>
+                  <p className="text-[10px] text-rose-400 uppercase tracking-wider font-black mt-0.5">High Ad Waste & Low Intent</p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 {points.map((pt, idx) => (
                   <div key={idx} className="pb-6 border-b border-white/5 last:border-b-0 last:pb-0">
-                    <p className="text-xs font-black text-rose-400 uppercase tracking-wider font-sans mb-2">{pt.label}</p>
+                    <p className="text-xs font-black text-rose-400 uppercase tracking-wider font-sans mb-1.5">{pt.label}</p>
                     <div className="flex gap-2.5 items-start">
-                      <XCircle className="w-5 h-5 text-rose-500/80 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-slate-400 leading-relaxed font-medium">{pt.bad}</p>
+                      <XCircle className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-slate-350 leading-relaxed font-medium">{pt.bad}</p>
                     </div>
                   </div>
                 ))}
@@ -82,24 +82,24 @@ export default function PainPoints() {
           </div>
 
           {/* Digitacurve Column */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-orange-500/20 relative overflow-hidden flex flex-col justify-between shadow-2xl">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-emerald-500/30 relative overflow-hidden flex flex-col justify-between shadow-[0_0_30px_rgba(16,185,129,0.05)] hover:shadow-[0_0_35px_rgba(16,185,129,0.12)] hover:border-emerald-500/50 transition-all duration-300">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
             
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center border border-orange-500/20">
-                  <Sparkles className="w-5 h-5 text-orange-500" />
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 shadow-inner">
+                  <Sparkles className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white tracking-tight">Digitacurve ROI-First Focus</h3>
-                  <p className="text-[10px] text-orange-500 uppercase tracking-wider font-bold mt-0.5">High Performance & Scale</p>
+                  <p className="text-[10px] text-emerald-400 uppercase tracking-wider font-black mt-0.5">High Performance & Scale</p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 {points.map((pt, idx) => (
                   <div key={idx} className="pb-6 border-b border-white/5 last:border-b-0 last:pb-0">
-                    <p className="text-xs font-black text-orange-500 uppercase tracking-wider font-sans mb-2">{pt.label}</p>
+                    <p className="text-xs font-black text-emerald-400 uppercase tracking-wider font-sans mb-1.5">{pt.label}</p>
                     <div className="flex gap-2.5 items-start">
                       <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                       <p className="text-sm text-slate-200 leading-relaxed font-medium">{pt.good}</p>

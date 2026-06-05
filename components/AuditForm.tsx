@@ -208,7 +208,7 @@ export default function AuditForm({ compact = false }: AuditFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md shadow-orange-500/10 cursor-pointer active:scale-[0.99] disabled:opacity-50 mt-2"
+        className={`w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md shadow-orange-500/10 cursor-pointer active:scale-[0.99] disabled:opacity-50 mt-2 ${!loading ? "btn-pulse-shimmer" : ""}`}
       >
         {loading ? (
           <>

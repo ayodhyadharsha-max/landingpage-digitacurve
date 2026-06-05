@@ -114,7 +114,23 @@ export default function Hero() {
           </div>
 
           {/* Right Lead Intake Form Column (Mounted Above the Fold) */}
-          <div id="hero-audit-form" className="lg:col-span-5 relative w-full flex justify-center">
+          <div id="hero-audit-form" className="lg:col-span-5 relative w-full flex flex-col items-center justify-center gap-4">
+            {/* Google Rating Trust Badge */}
+            <motion.a
+              href="https://share.google/IszwEKC0pok3prxtr"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-white/5 hover:border-orange-500/20 hover:bg-slate-900 transition-all duration-300 active:scale-95 group text-xs font-semibold"
+            >
+              <div className="flex items-center gap-0.5 text-orange-500">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span className="text-slate-300 group-hover:text-white transition-colors">4.9/5 Rating on Google Reviews</span>
+            </motion.a>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}

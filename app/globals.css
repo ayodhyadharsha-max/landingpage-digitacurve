@@ -125,3 +125,50 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Shimmer & Pulsing Glow for High Conversion CTA Buttons */
+@keyframes button-shimmer {
+  0% {
+    transform: translateX(-150%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(150%) skewX(-15deg);
+  }
+}
+
+@keyframes pulse-glow-orange {
+  0%, 100% {
+    box-shadow: 0 4px 14px 0px rgba(249, 115, 22, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 4px 25px 4px rgba(249, 115, 22, 0.55);
+    transform: scale(1.02);
+  }
+}
+
+.btn-pulse-shimmer {
+  position: relative;
+  overflow: hidden;
+  animation: pulse-glow-orange 2.2s infinite ease-in-out;
+}
+
+.btn-pulse-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-15deg);
+  animation: button-shimmer 3s infinite ease-in-out;
+  pointer-events: none;
+}
+

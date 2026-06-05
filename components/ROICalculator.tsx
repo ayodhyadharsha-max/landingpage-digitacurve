@@ -158,11 +158,32 @@ export default function ROICalculator() {
             <div>
               {/* Alert - Wasted Spend Indicator */}
               <div className="p-4 rounded-xl bg-rose-500/5 border border-rose-500/20 mb-6 flex items-start gap-3">
-                <ShieldAlert className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                <div>
+                <ShieldAlert className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5 animate-pulse" />
+                <div className="w-full">
                   <h4 className="text-xs font-bold text-rose-500 uppercase tracking-wider">ESTIMATED ANNUAL BUDGET WASTED:</h4>
                   <p className="text-2xl font-black text-rose-400 mt-1">${(wastedSpend * 12).toLocaleString()} USD</p>
-                  <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">
+                  
+                  {/* Warning Progress Bar */}
+                  <div className="mt-3 mb-3">
+                    <div className="flex justify-between items-center mb-1.5 text-[9px] font-bold text-rose-400 uppercase tracking-wider">
+                      <span>40% of budget leaking / unoptimized</span>
+                      <span className="inline-flex items-center gap-1 font-extrabold text-[8px] bg-rose-500/15 px-1.5 py-0.5 rounded text-rose-400 border border-rose-500/10">
+                        <span className="w-1 h-1 rounded-full bg-rose-500 animate-ping inline-block mr-0.5" />
+                        Critical Leak
+                      </span>
+                    </div>
+                    <div className="w-full h-2 rounded-full bg-slate-950 border border-white/5 relative overflow-hidden">
+                      <div 
+                        className="h-full rounded-full bg-gradient-to-r from-rose-600 via-rose-500 to-red-500 relative"
+                        style={{ width: "40%" }}
+                      >
+                        {/* Shimmer Line */}
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[100%] animate-[button-shimmer_2s_infinite]" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-[10px] text-slate-400 leading-relaxed">
                     This is what standard agencies waste on poor targeting, slow page templates, and unoptimized campaigns. We recover this.
                   </p>
                 </div>
