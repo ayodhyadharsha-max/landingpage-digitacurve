@@ -98,15 +98,18 @@ export default function IntentClusters() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="px-3 py-1 rounded-full bg-orange-500/10 text-orange-500 text-xs font-bold uppercase tracking-wider">
-            Engineered Search Intent Blocks
+            Our Performance Methodology
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-4 tracking-tight leading-tight">
-            How Do You Search For Premium Digital Growth?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-4 tracking-tight leading-tight">
+            Web, Ads & SEO Is Not a Fixed Playbook. <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-blue-400 glow-orange">
+              We Build the Engine That Iterates Until It Scales.
+            </span>
           </h2>
-          <p className="text-slate-400 mt-4 text-base sm:text-lg">
-            We structure our operations explicitly around your custom business goals. Choose the targeted approach that matches your immediate needs.
+          <p className="text-slate-400 mt-5 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+            From serving 50+ high-growth businesses, we found that scaling online is won through active iteration. Digitacurve custom-engineers high-speed Next.js sites, targets advanced AI search engines (SEO/GEO), and optimizes high-ROI paid ad campaigns (Google & Meta) continuously until your pipeline is full of qualified inquiries.
           </p>
         </div>
  

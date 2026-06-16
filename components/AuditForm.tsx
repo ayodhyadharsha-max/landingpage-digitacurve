@@ -5,11 +5,20 @@ import { Sparkles, Send, Lock, Loader2 } from "lucide-react";
 
 interface AuditFormProps {
   compact?: boolean;
+  prefilledWebsite?: string;
 }
 
-export default function AuditForm({ compact = false }: AuditFormProps) {
+export default function AuditForm({ compact = false, prefilledWebsite = "" }: AuditFormProps) {
   const [loading, setLoading] = useState(false);
   const [statusMsg, setStatusMsg] = useState("");
+  const [website, setWebsite] = useState("");
+
+  // Sync prefilled website prop to local state
+  React.useEffect(() => {
+    if (prefilledWebsite) {
+      setWebsite(prefilledWebsite);
+    }
+  }, [prefilledWebsite]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,7 +29,6 @@ export default function AuditForm({ compact = false }: AuditFormProps) {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const whatsapp = formData.get("whatsapp") as string;
-    const website = formData.get("website") as string;
     const service = formData.get("service") as string;
     const budget = formData.get("budget") as string;
     const message = formData.get("message") as string || "N/A";
@@ -141,6 +149,8 @@ export default function AuditForm({ compact = false }: AuditFormProps) {
             name="website"
             id={compact ? "hero-website" : "website"}
             placeholder="e.g. www.mybusiness.com"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
             className="w-full px-3 py-2.5 rounded-xl bg-slate-950/80 border border-white/10 text-white placeholder-slate-500 outline-none focus:border-orange-500/50 hover:border-white/20 transition-all font-sans text-xs"
           />
         </div>
