@@ -8,6 +8,7 @@ import TrustStrip from "@/components/TrustStrip";
 import IntentClusters from "@/components/IntentClusters";
 import ROICalculator from "@/components/ROICalculator";
 import PainPoints from "@/components/PainPoints";
+import FounderSection from "@/components/FounderSection";
 import AuditForm from "@/components/AuditForm";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -54,6 +55,9 @@ export default function Home() {
 
         {/* US vs THEM Comparison Pain points */}
         <PainPoints />
+
+        {/* Meet the Founder Trust Section */}
+        <FounderSection />
 
         {/* Conversion optimized Audit Intake Form */}
         <AuditForm prefilledWebsite={prefilledWebsite} />

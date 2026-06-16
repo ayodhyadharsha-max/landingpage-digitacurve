@@ -33,9 +33,9 @@ export default function Hero({ onWebsiteSubmit }: HeroProps) {
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 text-slate-300 text-xs font-semibold mb-8 backdrop-blur-sm"
         >
           <div className="flex -space-x-2">
-            <span className="inline-block h-6 w-6 rounded-full ring-2 ring-slate-950 bg-orange-500 text-[9px] font-black flex items-center justify-center text-slate-950">JD</span>
-            <span className="inline-block h-6 w-6 rounded-full ring-2 ring-slate-950 bg-blue-500 text-[9px] font-black flex items-center justify-center text-slate-950">AB</span>
-            <span className="inline-block h-6 w-6 rounded-full ring-2 ring-slate-950 bg-emerald-500 text-[9px] font-black flex items-center justify-center text-slate-950">MK</span>
+            <img src="/rishabh.png" alt="Rishabh Jaiswal" className="inline-block h-6 w-6 rounded-full ring-2 ring-slate-950 object-cover" />
+            <span className="inline-block h-6 w-6 rounded-full ring-2 ring-slate-950 bg-orange-500 text-[9px] font-black flex items-center justify-center text-slate-950">AB</span>
+            <span className="inline-block h-6 w-6 rounded-full ring-2 ring-slate-950 bg-blue-500 text-[9px] font-black flex items-center justify-center text-slate-950">MK</span>
           </div>
           <span className="text-[11px] font-medium tracking-wide">Over 50+ high-growth brands scaled to date</span>
         </motion.div>
