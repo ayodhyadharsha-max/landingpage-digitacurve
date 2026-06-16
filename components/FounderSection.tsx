@@ -25,10 +25,10 @@ export default function FounderSection() {
       ]
     },
     {
-      name: "Karan Sharma",
+      name: "Vivek Singh",
       title: "Senior Ads & PPC Campaign Strategist",
       image: "/representative1.png",
-      bio: "Paid search expert with years of experience managing high-performance Google & Meta ad campaigns. Karan specializes in bid optimization and eliminating wasted ad spend.",
+      bio: "Paid search expert with years of experience managing high-performance Google & Meta ad campaigns. Vivek specializes in bid optimization and eliminating wasted ad spend.",
       highlights: [
         "Google & Meta Ads Certified",
         "Recovered $1M+ in wasted agency budgets",
@@ -110,7 +110,7 @@ export default function FounderSection() {
             onClick={scrollToForm}
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm sm:text-base font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-orange-600 transition-all duration-300 shadow-lg shadow-orange-500/15 active:scale-95 group cursor-pointer btn-pulse-shimmer"
           >
-            Claim Your Free Audit with Rishabh & Karan
+            Claim Your Free Audit with Rishabh & Vivek
             <ArrowRight className="w-4.5 h-4.5 ml-2 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
