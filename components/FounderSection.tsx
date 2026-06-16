@@ -34,6 +34,17 @@ export default function FounderSection() {
         "Recovered $1M+ in wasted agency budgets",
         "Personally plans search terms & negatives"
       ]
+    },
+    {
+      name: "Khushi",
+      title: "Senior Social Media & SMO Strategist",
+      image: "/representative3.png",
+      bio: "Organic growth and social engagement expert. Khushi specializes in designing high-converting SMO asset calendars, audience interactions, and viral brand growth campaigns.",
+      highlights: [
+        "10x Organic Reach growth Specialist",
+        "High-CTR Visual Asset designer",
+        "Personally manages SMO brand strategy"
+      ]
     }
   ];
 
@@ -60,7 +71,7 @@ export default function FounderSection() {
         </div>
 
         {/* Representatives Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch max-w-6xl mx-auto">
           {representatives.map((rep, idx) => (
             <div key={idx} className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 flex flex-col justify-between hover:border-orange-500/20 transition-all duration-300 relative group">
               {/* Highlight line on hover */}
@@ -80,7 +91,7 @@ export default function FounderSection() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight">{rep.name}</h4>
+                    <h4 className="text-lg font-bold text-white tracking-tight">{rep.name}</h4>
                     <p className="text-xs text-orange-500 font-bold uppercase tracking-wider mt-0.5">{rep.title}</p>
                   </div>
                 </div>
@@ -110,7 +121,7 @@ export default function FounderSection() {
             onClick={scrollToForm}
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm sm:text-base font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-orange-600 transition-all duration-300 shadow-lg shadow-orange-500/15 active:scale-95 group cursor-pointer btn-pulse-shimmer"
           >
-            Claim Your Free Audit with Rishabh & Vivek
+            Claim Your Free Audit with our Strategy Team
             <ArrowRight className="w-4.5 h-4.5 ml-2 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
