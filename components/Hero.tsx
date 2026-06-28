@@ -5,15 +5,23 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 interface HeroProps {
-  onWebsiteSubmit: (url: string) => void;
+  onWebsiteSubmit?: (url: string) => void;
 }
 
 export default function Hero({ onWebsiteSubmit }: HeroProps) {
-  const [websiteUrl, setWebsiteUrl] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleGetStarted = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    onWebsiteSubmit(websiteUrl.trim());
+    const element = document.getElementById("audit-form-section");
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      window.history.pushState(null, "", "#audit-form-section");
+    }
   };
 
   return (
@@ -65,30 +73,21 @@ export default function Hero({ onWebsiteSubmit }: HeroProps) {
           Unlock high-value leads from Google, Paid Ads, and AI Search with a custom-engineered conversion engine.
         </motion.p>
 
-        {/* Website URL input container (Pill layout) */}
-        <motion.form
-          onSubmit={handleSubmit}
+        {/* Get Started Button */}
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.15 }}
-          className="mt-10 w-full max-w-lg p-1.5 rounded-full bg-slate-900/70 border border-white/10 flex items-center justify-between shadow-2xl focus-within:border-orange-500/40 transition-all duration-300 group"
+          className="mt-10"
         >
-          <input
-            type="text"
-            required
-            placeholder="Enter your website URL (e.g. www.yoursite.com)"
-            className="w-full px-5 py-3 rounded-full bg-transparent text-white placeholder-slate-500 outline-none text-xs sm:text-sm font-sans"
-            value={websiteUrl}
-            onChange={(e) => setWebsiteUrl(e.target.value)}
-          />
           <button
-            type="submit"
-            className="flex-shrink-0 inline-flex items-center justify-center px-6 py-3 rounded-full text-xs sm:text-sm font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-orange-600 transition-all active:scale-95 whitespace-nowrap cursor-pointer mr-0.5 btn-pulse-shimmer shadow-lg"
+            onClick={handleGetStarted}
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm sm:text-base font-extrabold text-slate-950 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-orange-600 transition-all active:scale-95 whitespace-nowrap cursor-pointer btn-pulse-shimmer shadow-lg shadow-orange-500/25 group gap-2"
           >
             Get Started
-            <ArrowRight className="w-4 h-4 ml-1.5 text-slate-950" />
+            <ArrowRight className="w-4.5 h-4.5 text-slate-950 group-hover:translate-x-1 transition-transform" />
           </button>
-        </motion.form>
+        </motion.div>
 
         {/* Google Reviews Badge */}
         <motion.a

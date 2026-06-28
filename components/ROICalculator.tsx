@@ -23,9 +23,16 @@ export default function ROICalculator() {
   const projectedCpl = Math.round(spend / projectedLeads);
 
   const scrollToForm = () => {
-    const element = document.getElementById("hero-audit-form");
+    const element = document.getElementById("audit-form-section");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      window.history.pushState(null, "", "#audit-form-section");
     }
   };
 

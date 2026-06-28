@@ -98,7 +98,7 @@ export default function Navigation() {
 
   const scrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const element = document.getElementById("hero-audit-form");
+    const element = document.getElementById("audit-form-section");
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
@@ -109,7 +109,7 @@ export default function Navigation() {
         behavior: "smooth"
       });
 
-      window.history.pushState(null, "", "#hero-audit-form");
+      window.history.pushState(null, "", "#audit-form-section");
       setMobileOpen(false);
     }
   };
@@ -161,7 +161,7 @@ export default function Navigation() {
           <div className="flex items-center gap-4">
             {/* CTA Button */}
              <a
-              href="#hero-audit-form"
+              href="#audit-form-section"
               onClick={scrollToForm}
               className="relative inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md shadow-orange-500/20 group overflow-hidden active:scale-95"
             >
