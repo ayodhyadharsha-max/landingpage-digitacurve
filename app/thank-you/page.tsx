@@ -6,12 +6,24 @@ import Link from "next/link";
 
 export default function ThankYouPage() {
   const [countdown, setCountdown] = useState(2);
-  const whatsappUrl = "https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20just%20submitted%20my%20details%20for%20the%20Free%20Strategy%20Audit.%20Let's%20connect%20to%20discuss%20the%20growth%20plan.";
+  const [whatsappUrl, setWhatsappUrl] = useState(
+    "https://wa.me/917572094201?text=Hi%20Digitacurve%2C%20I%20just%20submitted%20my%20details%20for%20the%20Free%20Strategy%20Audit.%20Let's%20connect%20to%20discuss%20the%20growth%20plan."
+  );
 
   useEffect(() => {
+    // Read query params safely on client mount
+    const searchParams = new URLSearchParams(window.location.search);
+    const customText = searchParams.get("text");
+    let targetUrl = whatsappUrl;
+    
+    if (customText) {
+      targetUrl = `https://wa.me/917572094201?text=${encodeURIComponent(customText)}`;
+      setWhatsappUrl(targetUrl);
+    }
+
     // Redirect logic
     const redirectTimer = setTimeout(() => {
-      window.location.href = whatsappUrl;
+      window.location.href = targetUrl;
     }, 2000);
 
     // Countdown interval

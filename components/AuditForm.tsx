@@ -67,17 +67,17 @@ export default function AuditForm({ compact = false, prefilledWebsite = "" }: Au
       );
 
       if (response.ok && result.success) {
-        window.location.href = `https://wa.me/917572094201?text=${waText}`;
+        window.location.href = `/thank-you?text=${waText}`;
       } else {
-        console.warn("Web3Forms API failed, falling back to WhatsApp redirect:", result);
-        setStatusMsg("Details logged. Redirecting to WhatsApp...");
+        console.warn("Web3Forms API failed, falling back to Thank You redirect:", result);
+        setStatusMsg("Details logged. Redirecting...");
         setTimeout(() => {
-          window.location.href = `https://wa.me/917572094201?text=${waText}`;
+          window.location.href = `/thank-you?text=${waText}`;
         }, 1200);
       }
     } catch (error) {
       console.error("Submission error:", error);
-      setStatusMsg("Connecting to WhatsApp...");
+      setStatusMsg("Redirecting...");
       setTimeout(() => {
         const waText = encodeURIComponent(
           `Hi Digitacurve,\n\nI would like to get a free strategy audit. My details:\n` +
@@ -87,7 +87,7 @@ export default function AuditForm({ compact = false, prefilledWebsite = "" }: Au
           `- Service Focus: ${service}\n` +
           `- Website: ${website || "N/A"}`
         );
-        window.location.href = `https://wa.me/917572094201?text=${waText}`;
+        window.location.href = `/thank-you?text=${waText}`;
       }, 1200);
     } finally {
       setLoading(false);
