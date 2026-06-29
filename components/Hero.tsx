@@ -56,21 +56,21 @@ export default function Hero({ onWebsiteSubmit }: HeroProps) {
           transition={{ duration: 0.3, delay: 0.05 }}
           className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-sans max-w-4xl"
         >
-          Digitacurve scales your <br className="hidden sm:inline" />
-          customer acquisition{" "}
+          Next-Gen Websites Built to <br className="hidden sm:inline" />
+          Dominate SEO, AEO &amp;{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-blue-400 glow-orange">
-            autonomously
+            AI Search
           </span>
         </motion.h1>
-
+ 
         {/* Sub-copy incorporating key services */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl leading-relaxed"
+          className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl leading-relaxed"
         >
-          Unlock high-value leads from Google, Paid Ads, and AI Search with a custom-engineered conversion engine.
+          We engineer high-converting websites optimized for ChatGPT, Gemini, and Google. Get an all-in-one growth setup combining premium web design, SEO, AEO, and hyper-targeted ads.
         </motion.p>
 
         {/* Get Started Button */}
