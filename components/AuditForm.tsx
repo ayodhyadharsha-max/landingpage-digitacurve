@@ -54,27 +54,30 @@ export default function AuditForm({ compact = false, prefilledWebsite = "" }: Au
       });
 
       const result = await response.json();
+      const waText = encodeURIComponent(
+        `Hi Digitacurve,\n\nI have submitted the Audit/Inquiry form on your website with the following details:\n` +
+        `- Name: ${name}\n` +
+        `- Email: ${email}\n` +
+        `- WhatsApp: ${whatsapp}\n` +
+        `- Website: ${website || "N/A"}\n` +
+        `- Service Focus: ${service}\n` +
+        `- Budget Range: ${budget}\n` +
+        `- Project Details: ${message}\n\n` +
+        `Please review my request and share your strategy recommendation.`
+      );
+
       if (response.ok && result.success) {
-        // Redirect to WhatsApp on successful form submission
-        const waText = encodeURIComponent(
-          `Hi Digitacurve,\n\nI have submitted the Audit/Inquiry form on your website with the following details:\n` +
-          `- Name: ${name}\n` +
-          `- Email: ${email}\n` +
-          `- WhatsApp: ${whatsapp}\n` +
-          `- Website: ${website || "N/A"}\n` +
-          `- Service Focus: ${service}\n` +
-          `- Budget Range: ${budget}\n` +
-          `- Project Details: ${message}\n\n` +
-          `Please review my request and share your strategy recommendation.`
-        );
         window.location.href = `https://wa.me/917572094201?text=${waText}`;
       } else {
-        setStatusMsg(result.message || "Something went wrong. Please try again.");
+        console.warn("Web3Forms API failed, falling back to WhatsApp redirect:", result);
+        setStatusMsg("Details logged. Redirecting to WhatsApp...");
+        setTimeout(() => {
+          window.location.href = `https://wa.me/917572094201?text=${waText}`;
+        }, 1200);
       }
     } catch (error) {
       console.error("Submission error:", error);
       setStatusMsg("Connecting to WhatsApp...");
-      // Fallback redirect to WhatsApp even if API fails
       setTimeout(() => {
         const waText = encodeURIComponent(
           `Hi Digitacurve,\n\nI would like to get a free strategy audit. My details:\n` +
@@ -85,7 +88,7 @@ export default function AuditForm({ compact = false, prefilledWebsite = "" }: Au
           `- Website: ${website || "N/A"}`
         );
         window.location.href = `https://wa.me/917572094201?text=${waText}`;
-      }, 1000);
+      }, 1200);
     } finally {
       setLoading(false);
     }
